@@ -20,9 +20,9 @@ def cls_show_app_head():
 
 def phonebook_top_menu(menu_top_head: str) -> str:
     """ меню телфонного справочника """
-    menu_top_choice = "Выбрать действие [1-4,q]: "
+    menu_top_choice = "Выбрать действие [1-5,q]: "
     pb_menu = menu_top_head + menu_top_choice
-    actions = ['1','2','3','4','q']
+    actions = ['1','2','3','4','5','q']
     while True:
         action = input(pb_menu)
         if action not in actions:
@@ -47,8 +47,8 @@ def search_contact() -> str:
 def show_contact_head():
     """ заголовок справочника """
     contact_head = \
-"ФАМИЛИЯ\t\tИМЯ\t\tОТЧЕСТВО\t\tТЕЛЕФОН\n\
--------\t\t---\t\t--------\t\t-------"
+"No.\tФАМИЛИЯ\t\tИМЯ\t\tОТЧЕСТВО\t\tТЕЛЕФОН\n\
+---\t-------\t\t---\t\t--------\t\t-------"
     print(contact_head)
 
 def add_contact() -> list:
@@ -66,6 +66,12 @@ def add_contact() -> list:
     contact_new.append(phone_number)
     return contact_new
 
+def get_contact_to_del() -> int:
+    """ Удаление контакта
+        Возвращает No. контакта в списке
+    """
+    cont_number = int(input('Введите номер удаляемого контакта: '))
+    return cont_number
 
 global msg_on_exit, error_msg       
 msg_on_exit = 'Выход из справочника. Пока!'
