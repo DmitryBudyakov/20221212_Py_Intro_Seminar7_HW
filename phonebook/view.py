@@ -9,7 +9,7 @@ def clear_screen():
 
 def app_head():
     """ заголовок программы """
-    title = 'Телефонный аправочник'
+    title = 'Телефонный справочник'
     title_line = '-'*len(title)
     head = f'{title_line}\n{title}\n{title_line}'
     print(head)
