@@ -23,12 +23,18 @@ def add_new_contact(contacts: list, contact: list) -> list:
     contacts.append(new_contact)
     return contacts
 
+def modify_contact(contacts: list, contact: list, contact_id: int) -> list:
+    """ Изменение контакта """
+    upd_contact = f"{','.join(contact)}\n"
+    contacts[contact_id - 1] = upd_contact
+    return contacts
+
 def sort_contacts(contacts: list) -> list:
     """ Сортировка списка контактов """
     sorted_list = sorted(contacts)
     return sorted_list
 
 def delete_contact(contacts: list, contact_num: int) -> list:
-    """ Удаление контакта """
+    """ Удаление контакта по его id """
     del(contacts[contact_num-1])
     return contacts
